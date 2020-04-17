@@ -187,6 +187,121 @@ header ul{
     background-color: var(--purple);
 }
 
+/* ACCESIBILITY */
+
+.accessibility{
+    font-size:16px;
+    letter-spacing: normal;
+    -webkit-user-select: none;  /* Chrome all / Safari all */
+    -moz-user-select: none;     /* Firefox all */
+    -ms-user-select: none;      /* IE 10+ */
+    user-select: none;
+    z-index: 100;
+}
+
+.accessibility .logo{
+    position: fixed;
+    height: 100px;
+    width: 100px;
+    right: 20px;
+    top: 20px;
+    background-image: url(../img/access.svg);
+    background-size: cover;
+}
+
+.accessibility .header{
+    width: 100%;
+    height: 55px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    background-color: #C2736C;
+}
+
+.accessibility:hover{
+    cursor: pointer;
+}
+
+.content-menu{
+    position: fixed;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
+    width: 300px;
+    height: 300px;
+    right: 110px;
+    top: 45px;
+}
+
+.accessibility .content-menu div:not(.header){
+    width: calc(50% - 2px);
+    height: 120px;
+    text-align: center;
+    color: #C2736C
+}
+
+#btn-highlightLink{
+    margin-top: -8px;
+    border-left: solid 1px #C2736C;
+    border-bottom: solid 1px #C2736C;
+    border-right: solid 1px #C2736C;
+    border-top: solid 1px #C2736C;
+}
+
+#btn-highlightLink img{
+    margin-bottom: 20%;
+    padding: 0;
+    object-position: center;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+#btn-fontSizeUp{
+    margin-top: -8px;
+    border-right: solid 1px #C2736C;
+    border-bottom: solid 1px #C2736C;
+    border-top: solid 1px #C2736C;
+}
+
+#btn-fontSizeUp img{
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+#btn-letterSpacing{
+    margin-top: -8px;
+    border-right: solid 1px #C2736C;
+    border-left: solid 1px #C2736C;
+    border-bottom: solid 1px #C2736C;
+}
+
+#btn-letterSpacing img{
+    margin-left: 20%;
+    margin-bottom: 20%;
+    margin-right: 20%;
+}
+
+#btn-toggleNarateur{
+    margin-top: -8px;
+    border-right: solid 1px #C2736C;
+    border-bottom: solid 1px #C2736C;
+}
+
+#btn-toggleNarateur img{
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+.content-menu div img {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    width: 50%;
+}
+
+.content-menu div:hover {
+    background-color: rgb(244, 244, 244);
+}
+
 /* DEMO */
 
 .demo{

@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-  const btnMenu = document.querySelector('.accessibility');
+  const btnMenu = document.querySelector('.logo');
   const btnClose = document.querySelector('.close');
   const menu = document.querySelector('.content-menu');
   const btnHighLightLink = document.querySelector('#btn-highlightLink');
@@ -14,23 +14,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   btnMenu.addEventListener('click', (e) => {
 
-    if (menu.style.display == "block"){
-      menu.style.display = "none";
+    if (menu.style.visibility == "hidden"){
+      menu.style.visibility = "visible";
     } else {
-      menu.style.display = "block";
+      menu.style.visibility = "hidden";
     }
 
   });
 
-  // btnClose.addEventListener('click', (e) => {
-  //
-  //   if (menu.style.display == "none"){
-  //     menu.style.display = "block";
-  //   } else {
-  //     menu.style.display = "none";
-  //   }
-  //
-  // });
 
   btnHighLightLink.addEventListener('click', (e) => {
 
