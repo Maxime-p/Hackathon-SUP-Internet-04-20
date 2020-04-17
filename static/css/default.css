@@ -196,6 +196,9 @@ header ul{
     -moz-user-select: none;     /* Firefox all */
     -ms-user-select: none;      /* IE 10+ */
     user-select: none;
+}
+
+.accessibility > *{
     z-index: 100;
 }
 
@@ -217,11 +220,16 @@ header ul{
     background-color: #C2736C;
 }
 
+.accessibility .header:hover{
+    background-color: #C2736C;
+}
+
 .accessibility:hover{
     cursor: pointer;
 }
 
 .content-menu{
+    visibility: hidden;
     position: fixed;
     display: flex;
     flex-wrap: wrap;
@@ -246,6 +254,7 @@ header ul{
     border-bottom: solid 1px #C2736C;
     border-right: solid 1px #C2736C;
     border-top: solid 1px #C2736C;
+    background-color: white;
 }
 
 #btn-highlightLink img{
@@ -254,6 +263,7 @@ header ul{
     object-position: center;
     margin-left: 20%;
     margin-right: 20%;
+    background-color: white;
 }
 
 #btn-fontSizeUp{
@@ -261,11 +271,13 @@ header ul{
     border-right: solid 1px #C2736C;
     border-bottom: solid 1px #C2736C;
     border-top: solid 1px #C2736C;
+    background-color: white;
 }
 
 #btn-fontSizeUp img{
     margin-left: 20%;
     margin-right: 20%;
+    background-color: white;
 }
 
 #btn-letterSpacing{
@@ -273,23 +285,27 @@ header ul{
     border-right: solid 1px #C2736C;
     border-left: solid 1px #C2736C;
     border-bottom: solid 1px #C2736C;
+    background-color: white;
 }
 
 #btn-letterSpacing img{
     margin-left: 20%;
     margin-bottom: 20%;
     margin-right: 20%;
+    background-color: white;
 }
 
 #btn-toggleNarateur{
     margin-top: -8px;
     border-right: solid 1px #C2736C;
     border-bottom: solid 1px #C2736C;
+    background-color: white;
 }
 
 #btn-toggleNarateur img{
     margin-left: 20%;
     margin-right: 20%;
+    background-color: white;
 }
 
 .content-menu div img {
