@@ -193,7 +193,7 @@ header ul{
 /* DEMO */
 
 .demo{
-    height: 1100px;
+    height: 100vh;
     background-image: url("../img/bandeau_jaune.svg");
     background-repeat: no-repeat;
     background-size: 100%;
@@ -216,7 +216,7 @@ header ul{
 /* SERVICE */
 
 .service{
-    height: 700px;
+    height: 100vh;
 }
 
 .service td{
@@ -230,7 +230,7 @@ header ul{
 /* DISCUSS */
 
 .discuss{
-    height: 1100px;
+    height: 100vh;
     background-image: url("../img/bandeau_violet.svg");
     background-repeat: no-repeat;
     background-size: 100%;
