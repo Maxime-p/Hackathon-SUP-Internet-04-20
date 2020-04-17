@@ -9,6 +9,7 @@
 //  highlightLink(status)           - boolean, optional arg
 //  modifyFontSize(status)          - integer ( 1/2/3/4/5 ), optional arg
 //  modifyLetterSpacing(status)     - float ( 1/.../5 ), optional arg
+//  toggleNarateur(status)          - boolean, optional arg
 
 //                                                      //
 //                                                      //
@@ -17,12 +18,13 @@
 let isHightlight = sessionStorage.getItem("isHightlight") || false;
 let fontSizeUp = sessionStorage.getItem("fontSizeUp") || 1;
 let letterSpacing = sessionStorage.getItem("letterSpacing") || 1;
+let narateur = false;
 
 
 function highlightLink(status) {  // boolean
   isHightlight = status || isHightlight;
   if (status == false){isHightlight = false;}
-  const links = document.querySelectorAll('a');
+  const links = document.querySelectorAll('a:not([passover])');
   links.forEach((item, i) => {
     if (!isHightlight){
       item.style.removeProperty('color');
@@ -40,7 +42,7 @@ function highlightLink(status) {  // boolean
 
 function modifyFontSize(status) { // integer ( 1/2/3/4/5 )
   fontSizeUp = status || fontSizeUp;
-  const links = document.querySelectorAll('*');
+  const links = document.querySelectorAll('*:not([passover])');
   links.forEach((item, i) => {
     if (fontSizeUp == 1) {
       item.style.removeProperty('font-size');
@@ -56,7 +58,7 @@ function modifyFontSize(status) { // integer ( 1/2/3/4/5 )
 
 function modifyLetterSpacing(status) { // float ( 1/.../5 )
   letterSpacing = status || letterSpacing;
-  const links = document.querySelectorAll('*');
+  const links = document.querySelectorAll('*:not([passover])');
   links.forEach((item, i) => {
     if (letterSpacing == 1) {
       item.style.removeProperty('letter-spacing');
@@ -67,4 +69,56 @@ function modifyLetterSpacing(status) { // float ( 1/.../5 )
   sessionStorage.setItem("letterSpacing", letterSpacing);
   if (letterSpacing >= 5) { letterSpacing = 0;}
   letterSpacing++;
+}
+
+function toggleNarateur(status){
+  narateur = status || !narateur;
+  if (narateur){
+    speak("Le narateur est activé sur ce site web !", null);
+  } else {
+    speak("Le narateur est desactivé sur ce site web !", null);
+  }
+}
+
+var synth = window.speechSynthesis;
+document.addEventListener('click', (e) => {
+  if (narateur){
+    e = e || window.event;
+    if (e.target.tagName == "P" || e.target.tagName == "H1" || e.target.tagName == "H2" || e.target.tagName == "H3" || e.target.tagName == "H4" || e.target.tagName == "H5"){
+      var target = e.target || e.srcElement,
+      text = target.textContent || target.innerText;
+      target.style.border = "yellow 3px solid";
+      speak(text, target);
+    }
+  }
+});
+
+function speak(text, target){
+  if (synth.speaking) {
+    console.error('speechSynthesis.speaking');
+    return;
+  }
+  if (text !== '') {
+    var utterThis = new SpeechSynthesisUtterance(text);
+    utterThis.onend = function (event) {
+      console.log('SpeechSynthesisUtterance.onend');
+      target.style.removeProperty('border');
+    };
+    utterThis.onerror = function (event) {
+      console.error('SpeechSynthesisUtterance.onerror');
+      target.style.removeProperty('border');
+    };
+
+    var voices = window.speechSynthesis.getVoices();
+    for (const value of voices){
+      if (value.lang == "fr-FR"){ //&& !value.name.includes("Microsoft") -- buger sur chrome :'(
+        utterThis.voice = voices[voices.indexOf(value)];
+        break;
+      }
+    }
+
+   utterThis.pitch = 1;
+   utterThis.rate = 1;
+   synth.speak(utterThis);
+  }
 }

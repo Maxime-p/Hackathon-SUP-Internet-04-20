@@ -1,0 +1,20 @@
+.accessibility{
+  position: fixed;
+  height: 100px;
+  width: 100px;
+  right: 20px;
+  top: 20px;
+  background-image: url(https://www.aurore-coach-de-vie.com/uploaded/117660//preferences-desktop-accessibility-icon.png);
+  background-size: cover;
+}
+
+.accessibility:hover{
+  cursor: pointer;
+}
+
+.content-menu{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  right: 100px;
+}
