@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<title></title>
+	<meta charset="UTF-8">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+	<link rel="stylesheet" href="static/css/default.css">
+
+	<script src="static/js/accessibility.js"></script>
+	<script src="static/js/script.js"></script>
+</head>
+<body>
+
+<header class="container flex-row flex-sb flex-ac">
+	<div class="flex-row flex-sb flex-ac">
+		<img src="static/img/logo.svg" alt="Logo">
+		<h1>Gramophone</h1>
+	</div>
+	<nav>
+		<ul class="flex-row flex-sb">
+			<li>Accueil</li>
+			<li>A propos</li>
+			<li>Contact</li>
+			<li>Se connecter</li>
+		</ul>
+	</nav>
+</header>
+
+<section class="signup">
+	<div class="container flex-col">
+		<h2>S'inscrire</h2>
+		<div class="flex-row flex-sb">
+			<img src="static/img/signup.png" alt="">
+			<form action="" class="flex-col flex-sb">
+				<div><label for="name">Nom Prénom</label><input type="text" id="name"></div>
+				<div><label for="email">Email</label><input type="email" id="email"></div>
+				<div><label for="password">Mot de passe</label><input type="password" id="password"></div>
+				<div><label for="passwordconfirm">Repeter le mot de passe</label><input type="password" id="passwordconfirm"></div>
+				<input type="submit" value="Valider">
+			</form>
+		</div>
+	</div>
+</section>
+
+<section class="demo flex-row flex-ac">
+	<div class="container flex-row flex-sb flex-ac">
+		<img src="static/img/phone.svg" alt="Image d'un téléphone contenant l'application">
+		<div class="flex-col flex-sb">
+			<p>Découvrez nos téléphones mobiles pour personnes âgées faciles à utiliser, dotés de nombreuses fonctionnalités répondant à tous vos besoins. Les atouts de nos téléphones mobiles : de grosses touches, un son clair et puissant, une grande lisibilité, un socle chargeur inclus, une touche d’assistance et bien plus encore… Optez pour le modèle qui vous correspondra le mieux.</p>
+			<div class="flex-row flex-sa">
+				<img src="static/img/storeapple.png" alt="Image store Apple">
+				<img src="static/img/storegoogle.png" alt="Image store Google">
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="service">
+	<div class="container flex-col flex-ac">
+		<h2>Services</h2>
+		<table>
+			<tr>
+				<td><img src="static/img/icon1.svg" alt="Icone de l'application"></td>
+				<td><img src="static/img/icon2.svg" alt="Icone de l'application"></td>
+				<td><img src="static/img/icon3.svg" alt="Icone de l'application"></td>
+				<td><img src="static/img/icon4.svg" alt="Icone de l'application"></td>
+			</tr>
+			<tr>
+				<td><h3>Journal</h3></td>
+				<td><h3 class="text-center">Visio et Messagerie</h3></td>
+				<td><h3>Amis</h3></td>
+				<td><h3>Profil</h3></td>
+			</tr>
+			<tr>
+				<td><p class="text-center">Suivez l'actualité de votre famille et de vos amis</p></td>
+				<td><p class="text-center">Faites des visios et discutez avec vos proches</p></td>
+				<td><p class="text-center">Ajoutez des relations pour garder contact avec ceux qui comptent</p></td>
+				<td><p class="text-center">Changez votre photo, vos paramètres et vos informations</p></td>
+			</tr>
+		</table>
+	</div>
+</section>
+
+<section class="discuss flex-row">
+	<div class="container flex-row flex-sb">
+		<img src="static/img/contact.svg" alt="Image cercle de contact">
+		<div>
+			<h2>Discuter</h2>
+			<p>Discutez en <span>temps réel</span> avec vos <span>proches</span> afin de <span>garder contact</span>, même à <span>distance</span> ! Écrivez des <span>messages</span>, envoyez des <span>photos</span>, ou faites des <span>visios</span> ! <span>Seniors</span>, organisez des parties de bridge à distance avec vos meilleurs amis. <span>Juniors</span>, donnez des nouvelles à vos parents ou grands-parents. <span class="colored">Gardez contact avec les gens qui comptent !</span></p>
+		</div>
+	</div>
+</section>
+
+<section class="contact flex-col flex-ac">
+	<h2>Nous contacter</h2>
+	<div class="container">
+		<form action="" class="flex-col">
+			<label for="email"></label>
+			<input placeholder="Email" type="email" id="email" name="email" value="">
+			<label class="msg" for="msg"></label>
+			<textarea id="msg" placeholder="Ecriver votre message ici" name="name" rows="15"></textarea>
+			<input type="submit" name="submit" value="Envoyer">
+		</form>
+	</div>
+</section>
+
+<footer>
+	<div class="container">
+		<div class="flex-row flex-sb flex-ac">
+			<div class="flex-col">
+				<div class="title">Découvrir</div>
+				<div>A propos</div>
+				<div>Notre application</div>
+			</div>
+			<div class="flex-col">
+				<div class="title">Mentions légales</div>
+				<div>Mentions légales</div>
+				<div>Confidentialité</div>
+			</div>
+			<div class="flex-col">
+				<div class="title">Vous aider</div>
+				<div>Nous contacter</div>
+				<div>FAQ</div>
+			</div>
+		</div>
+	</div>
+</footer>
+
+</body>
+</html>

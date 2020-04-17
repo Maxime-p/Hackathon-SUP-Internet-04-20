@@ -1,3 +1,23 @@
+:root{
+    --purple: #543776;
+    --brick: #c2736c;
+    --white-break: #ffefd4;
+    --pink: #fcc9b0;
+}
+
+@font-face {
+    font-family: Mukta;
+    src: url(../font/Mukta_Mahee/MuktaMahee-Medium.ttf);
+}
+
+@font-face {
+    font-family: Avnir;
+    src: url(../font/Avenir/AvenirLTStd-Medium.otf);
+}
+
+/*
+ CSS RESET
+ */
 html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}
 body{line-height:1; overflow-x: hidden;}
 article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}
@@ -13,8 +33,64 @@ hr{display:block;height:1px;border:0;border-top:1px solid #ccc;margin:1em 0;padd
 input,select{vertical-align:middle}
 li{list-style:none}
 
+/*
+ GENERAL CSS
+ */
+
 body{
-    font-family: sans-serif;
+    font-size: 30px;
+    font-family: Mukta, sans-serif;
+}
+
+h2{
+    display: inline-block;
+    position: relative;
+    font-size: 70px;
+    font-weight: 900;
+    text-align: center;
+    margin: 100px auto;
+    z-index: 2;
+}
+
+h2::before{
+    display: block;
+    position: absolute;
+    content: '';
+    width: 315px;
+    height: 165px;
+    top: -50px;
+    left: -60px;
+    background-image: url("../img/point.svg");
+}
+
+h3{
+    position: relative;
+    margin: 25px 0 30px;
+}
+
+h2::after, h3::after{
+    display: block;
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 15px;
+    margin: -20px 0 0 50%;
+    background-color: var(--pink);
+    transition-duration: 0.5s;
+    z-index: -1;
+}
+
+h3::after{
+    margin: -15px 0 0 50%;
+}
+
+section{
+    position: relative;
+    margin-bottom: 100px;
+}
+
+section:hover h2::after{
+    width: 55%;
 }
 
 .flex-row{
@@ -29,4 +105,268 @@ body{
 
 .flex-sb{
     justify-content: space-between;
+}
+
+.flex-sa{
+    justify-content: space-around;
+}
+
+.flex-as{
+    align-items: start;
+}
+
+.flex-ac{
+    align-items: center;
+}
+
+.flex-ae{
+    align-items: end;
+}
+
+.text-center{
+    text-align: center;
+}
+
+.container{
+    width: 1200px;
+    margin: auto;
+}
+
+/*
+ PAGE ELEMENT CSS
+ */
+
+/* HEADER */
+
+header.container{
+    width: 1400px;
+    margin-top: 20px;
+    color: var(--purple);
+}
+
+header img{
+    margin-right: 20px;
+}
+
+header nav{
+    width: 40%;
+}
+
+header ul{
+    width: 100%;
+}
+
+/* SIGNUP */
+
+.signup > .container > div > *{
+    width: 40%;
+}
+
+.signup img{
+    margin-left: 20px;
+}
+
+.signup label{
+    color: var(--purple);
+}
+
+.signup input{
+    display: block;
+    font-size: 20px;
+    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border: 3px solid black;
+    border-radius: 50px;
+    padding: 5px 10px;
+}
+
+.signup input[type='submit']{
+    width: 50%;
+    margin: auto;
+    border: none;
+    padding: 15px 0;
+    color: white;
+    background-color: var(--purple);
+}
+
+/* DEMO */
+
+.demo{
+    height: 1100px;
+    background-image: url("../img/bandeau_jaune.svg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.demo > div > img{
+    width: 425px;
+}
+
+.demo > div > div img{
+    width: 220px;
+}
+
+.demo p{
+    width: 600px;
+}
+
+
+
+/* SERVICE */
+
+.service{
+    height: 700px;
+}
+
+.service td{
+    text-align: center;
+}
+
+.service h3:hover::after{
+    width: 40px;
+}
+
+/* DISCUSS */
+
+.discuss{
+    height: 1100px;
+    background-image: url("../img/bandeau_violet.svg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.discuss img{
+    width: 50%;
+}
+
+.discuss > div > div{
+    width: 500px;
+}
+
+.discuss h2::before{
+    display: none;
+}
+
+.discuss h2{
+    color: white;
+}
+
+.discuss p{
+    color: white;;
+}
+
+.discuss p > span{
+    font-weight: bold;
+}
+
+/* CONTACT */
+
+section.contact{
+    margin-bottom: 0;
+}
+
+.contact form{
+    width: 100%;
+    margin: auto;
+}
+
+.contact form label{
+    position: relative;
+    font-size: 26px;
+    margin: 25px 10%;
+}
+
+
+.contact form input[type="email"]{
+    margin-left: 10%;
+    width: 45%;
+    height: 65px;
+    border: #543776 2px solid;
+    border-radius: 50px;
+}
+
+.contact form label:before{
+    position: absolute;
+    top: 45px;
+    left: 20px;
+    display: block;
+    height: 23px;
+    width: 30px;
+    content: '';
+    background-image: url(../img/icon_mail.svg);
+    background-size: cover;
+}
+
+.contact form .msg:before{
+    position: absolute;
+    top: 45px;
+    left: 20px;
+    display: block;
+    height: 30px;
+    width: 30px;
+    content: '';
+    background-image: url(../img/icon_pen.svg);
+    background-size: cover;
+}
+
+.contact form input[type="email"]:focus{
+    outline: none;
+}
+
+.contact form input[value]{
+    padding-left: 65px;
+    font-size: 24px;
+}
+
+.contact form textarea{
+    padding: 0;
+    margin: 0;
+    border: none;
+    resize: none;
+    outline: none;
+    margin-left: 10%;
+    border: #543776 2px solid;
+    border-radius: 40px;
+    width: 80%;
+    padding-left: 65px;
+    padding-top: 20px;
+    font-size: 24px;
+}
+
+.contact form input[type="submit"]{
+    padding: 0;
+    background-color: #543776;
+    height: 65px;
+    width: 15%;
+    border-radius: 50px;
+    color: white;
+    margin-left: 75%;
+    border: none;
+    margin-top: 50px;
+}
+
+.contact form input[type="submit"]:hover{
+    cursor: pointer;
+    background-color: #3d146e;
+}
+/* FOOTER */
+
+footer{
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 560px;
+    background-image: url(../img/footer_background.svg);
+    background-size: cover;
+}
+
+footer > div{
+    padding-top: 420px;
+}
+
+footer .title{
+    font-weight: 900;
+    color: var(--purple);
+    margin-bottom: 30px;
 }
