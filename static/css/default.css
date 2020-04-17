@@ -38,8 +38,8 @@ li{list-style:none}
  */
 
 body{
-    font-size: 23px;
-    line-height: 1.6;
+    font-size: 21px;
+    line-height: 1.4;
     font-family: Mukta, sans-serif;
 }
 
@@ -406,6 +406,11 @@ header ul{
 
 .discuss p > span{
     font-weight: bold;
+}
+
+.discuss p.colored{
+    color: var(--pink);
+    padding-top: 20px;
 }
 
 /* CONTACT */
